@@ -1,0 +1,20 @@
+# Dependency folders
+node_modules/
+jspm_packages/
+web_modules/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+__pycache__/
+
+# Build and output directories
+dist/
+build/
+.next/
+out/
+
+# Operating system files
+.DS_Store
+Thumbs.db
