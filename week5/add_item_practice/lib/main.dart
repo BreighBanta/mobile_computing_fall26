@@ -48,13 +48,18 @@ class _AddItemScreenState extends State<AddItemScreen> {
               TextFormField(
                 controller: _detailController,
                 decoration: const InputDecoration(labelText: 'Detail'),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) return '';
+                  return null;
+                }
               ),
               ElevatedButton(
                 onPressed: () {
                   final isValid = _formKey.currentState!.validate();
+
                   if (!isValid) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Title cannot be empty')),
+                      const SnackBar(content: Text('Fields cannot be empty')),
                     );
                     return;
                   }
